@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html class=" js no-touch geolocation backgroundsize csstransforms csstransforms3d audio localstorage inlinesvg pointerevents webaudio mediaqueries getusermedia" style=""><head><style type="text/css">.pac-container{background-color:#fff;position:absolute!important;z-index:1000;border-radius:2px;border-top:1px solid #d9d9d9;font-family:Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,0.3);-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.pac-container:after{content:"";padding:1px 1px 1px 0;height:16px;text-align:right;display:block;background-image:url(//maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white2.png);background-position:right;background-repeat:no-repeat;background-size:104px 16px}.hdpi.pac-container:after{background-image:url(//maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white2_hdpi.png)}.pac-item{cursor:default;padding:0 4px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:30px;text-align:left;border-top:1px solid #e6e6e6;font-size:11px;color:#999}.pac-item:hover{background-color:#fafafa}.pac-item-selected,.pac-item-selected:hover{background-color:#ebf2fe}.pac-matched{font-weight:700}.pac-item-query{font-size:13px;padding-right:3px;color:#000}.pac-icon{width:15px;height:20px;margin-right:7px;margin-top:6px;display:inline-block;vertical-align:top;background-image:url(//maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);background-size:34px}.hdpi .pac-icon{background-image:url(//maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png)}.pac-icon-search{background-position:-1px -1px}.pac-item-selected .pac-icon-search{background-position:-18px -1px}.pac-icon-marker{background-position:-1px -161px}.pac-item-selected .pac-icon-marker{background-position:-18px -161px}.pac-placeholder{color:gray}</style><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}</style>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,target-densitydpi=160" name="viewport">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="keywords" content="Islam,islam,namaz,adan,azan,pray,prayer,time,kaaba,ramadan,namaz,salat">
+    <meta property="og:title" content="Prayer Times - Islam">
+    <meta property="og:description" content="Google I/O 2014 brings developers together for an immersive, two-day experience focused on exploring the next generation of technology. Join us online or in person June 25-26, 2014.">
+    <meta property="og:image" content="/events/io/images/io.png">
+    <script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.s2bOdO4XoIM.O/m=client,plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AItRSTMF348GR47HtwPAwHP55zn9SGiI4Q/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="https://plus.google.com/js/client:plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script type="text/javascript">var sessionDetails;</script>
+    <title>Prayer Times - Islan</title>
+    <link rel="shortcut icon" href="/events/io/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/events/io/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/events/io/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/events/io/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/events/io/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/events/io/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/events/io/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/events/io/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/events/io/images/apple-touch-icon-152x152.png">
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,300,100" rel="stylesheet">
+    <link href="/css/site.css" rel="stylesheet">
+    <script src="/js/modernizr.js"></script>
+  <!-- <script type="text/javascript" charset="UTF-8" src="https://maps.gstatic.com/cat_js/intl/en_us/mapfiles/api-3/16/13/%7Bcommon,map,util,marker,controls,places_impl%7D.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.gstatic.com/cat_js/intl/en_us/mapfiles/api-3/16/13/%7Bonion%7D.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/ViewportInfoService.GetViewportInfo?1m6&amp;1m2&amp;1d7.557322832857336&amp;2d144.6162992635659&amp;2m2&amp;1d66.1265747875017&amp;2d-28.339960623215006&amp;2u5&amp;4sen-US&amp;5e0&amp;6sm%40267000000&amp;7b0&amp;8e0&amp;9b0&amp;callback=_xdc_._aqxyy6&amp;token=103619"></script><script type="text/javascript" charset="UTF-8" src="https://maps.gstatic.com/cat_js/intl/en_us/mapfiles/api-3/16/13/%7Bstats%7D.js"></script><script type="text/javascript" charset="UTF-8" src="https://mts1.googleapis.com/mapslt/ft?hl=en-US&amp;lyrs=m%40267000000%7Csalt%3A1481653421&amp;las=tutwu,tutww,tuuvt,tuuvu,tuuvv,tuuvw,tuvuu,tuvuw,tuvwu,tuvww,tuwtt,tuwtu,tuwtv,tuwtw,tuwvt,tuwvu,tuwvv,tuwvw,twtuu,twutt,twutu&amp;z=5&amp;src=apiv3&amp;xc=1&amp;style=47%2C37%7Csmartmaps&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;callback=_xdc_._ryv3bv&amp;token=98545"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate?1shttps%3A%2F%2Fwww.google.com%2Fevents%2Fio%2Flogistics&amp;2sgoogle-io&amp;5e1&amp;callback=_xdc_._pd5s6h&amp;token=32327"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/QuotaService.RecordEvent?1shttps%3A%2F%2Fwww.google.com%2Fevents%2Fio%2Flogistics&amp;2sgoogle-io&amp;4e1&amp;5e0&amp;6u1&amp;7sbxtq6s&amp;callback=_xdc_._sbe23o&amp;token=88334"></script> --></head>
+  
+  <body class="logistics basement-open hoverable" data-google-drive-client-id="237695054204-umlfeaogsp53dibh6nc462fa2invrven.apps.googleusercontent.com">
+    <div class="details js-details -hide">
+      <div class="details__dismiss js-scrim-dismiss-main">&nbsp;</div>
+      <div class="details__card js-details-card">&nbsp;</div>
+    </div>
+
+    <div class="toggle-basement js-basement" data-toggle-name="basement" data-direction="left">
+      <div class="basement js-toggle-content--basement" style="display: block;">
+        <nav class="nav -mobile">
+          <a class="nav__item -mobile -logo" href="/events/io"><span class="icon -io">I/O</span></a>
+          <a class="nav__item -mobile -home" href="/events/io">Home</a>
+          <a class="nav__item -mobile -sandbox" href="/events/io/sandbox">Sandbox</a>
+          <a class="nav__item -mobile -schedule" href="/events/io/schedule">Schedule</a>
+          <a class="nav__item -mobile -io-extended" href="/events/io/io-extended">I/O Extended</a>
+          <a class="nav__item -mobile -logistics active" href="/events/io/logistics">Logistics</a>
+          <a class="nav__item -mobile -videos" href="/events/io/io14videos">Videos</a>
+          <a class="nav__item -mobile -experiment" href="/events/io/experiment">Experiment</a>
+          <a class="nav__item -mobile -help show-for-small-only" href="/events/io/help">Help</a>
+        </nav>
+      </div>
+
+      <!--[if lt IE 9]>
+      <div class="butter-bar g-bg-baby-blue -secondary-padding v-align text-center">
+        <h1 class="h1 g-color-blue -padding-sides text-right">:(</h1>
+
+        <p class="g-color-charcoal text-left">
+          Your current browser can't handle this site.
+          <br>
+          It may be time to <a class="g-color-blue" href="http://whatbrowser.org" target="_blank">upgrade</a>.
+        </p>
+      </div>
+      <![endif]-->
+
+      <div class="wrapper js-basement-sibling">
+        <header class="header hide-for-x-large -lighter post-keynote-header js-nav">
+          <nav class="nav -desktop">
+            <a class="nav__item -desktop -logo" href="/events/io"><span class="icon -io">I/O</span></a>
+            <a class="nav__item -desktop -home hide-for-small-only" href="/events/io">Home</a>
+            <a class="nav__item -desktop -sandbox hide-for-small-only" href="/events/io/sandbox">Sandbox</a>
+            <a class="nav__item -desktop -schedule hide-for-small-only" href="/events/io/schedule">Schedule</a>
+            <a class="nav__item -desktop -io-extended hide-for-small-only" href="/events/io/io-extended">I/O Extended</a>
+            <a class="nav__item -desktop -logistics hide-for-small-only active" href="/events/io/logistics">Logistics</a>
+            <a class="nav__item -desktop -videos hide-for-small-only" href="/events/io/io14videos">Videos</a>
+            <a class="nav__item -desktop -experiment hide-for-small-only" href="/events/io/experiment">Experiment</a>
+            <div class="menu js-toggler--basement" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+              <span class="icon -menu-black">Navigation</span>
+            </div>
+          </nav>
+        </header>
+        
+        <div class="bucket -primary g-bg-dark-blue g-color-white experiment-partial -clouds js-experiment-partial">
+          <div class="v-align -whole">
+            <div class="v-align__element -bottom">
+              <h1 class="bucket__headline -bottom h1 allow-orphan">
+                Get I/O ready
+              </h1>
+            </div>
+          </div>
+        <div class="renderer" style="overflow: hidden; -webkit-transform-style: preserve-3d; width: 1407px; height: 600px; position: absolute; top: 0px; left: 0px; -webkit-perspective: 1701.3845458853127px;"><div style="-webkit-transform-style: preserve-3d; width: 1407px; height: 600px; -webkit-transform: translate3d(0px, 0px, 1701.3845458853127px) matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, 0, -500, 1) translate3d(703.5px, 300px, 0px);"><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.08535858243703842, 0, -0.21715974807739258, 0, 0, -0.23333333432674408, 0, 0, 0.21715974807739258, 0, -0.08535858243703842, 0, 118.4149398803711, -16, -9.120709419250488, 1); -webkit-filter: brightness(0.7744807779788971);"><rect id="exp-svg-21" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#F2B329" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.21715974807739258, 0, 0.08535858243703842, 0, 0, -0.23333333432674408, 0, 0, -0.08535858243703842, 0, -0.21715974807739258, 0, 112.87928771972656, -16, 3.5850603580474854, 1); -webkit-filter: brightness(0.977115485072136);"><rect id="exp-svg-22" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#FA5357" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.08535858243703842, 0, 0.21715974807739258, 0, 0, -0.23333333432674408, 0, 0, -0.21715974807739258, 0, 0.08535858243703842, 0, 125.5850601196289, -16, 9.120709419250488, 1); -webkit-filter: brightness(0.7744807779788971);"><rect id="exp-svg-23" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#F2B329" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.21715974807739258, 0, -0.08535858243703842, 0, 0, -0.23333333432674408, 0, 0, 0.08535858243703842, 0, 0.21715974807739258, 0, 131.12071228027344, -16, -3.5850603580474854, 1); -webkit-filter: brightness(0.977115485072136);"><rect id="exp-svg-24" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#FA5357" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.053629811853170395, 0, -0.15780247747898102, 0, 0, -0.1666666716337204, 0, 0, 0.15780247747898102, 0, -0.053629811853170395, 0, 55.7475471496582, -46, -6.627703666687012, 1); -webkit-filter: brightness(0.7590844079852104);"><rect id="exp-svg-25" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#34C7D9" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.15780247747898102, 0, 0.053629811853170395, 0, 0, -0.1666666716337204, 0, 0, -0.053629811853170395, 0, -0.15780247747898102, 0, 51.37229537963867, -46, 2.2524521350860596, 1); -webkit-filter: brightness(0.9825666695833206);"><rect id="exp-svg-26" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#34C7D9" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.053629811853170395, 0, 0.15780247747898102, 0, 0, -0.1666666716337204, 0, 0, -0.15780247747898102, 0, 0.053629811853170395, 0, 60.2524528503418, -46, 6.627703666687012, 1); -webkit-filter: brightness(0.7590844079852104);"><rect id="exp-svg-27" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#34C7D9" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.15780247747898102, 0, -0.053629811853170395, 0, 0, -0.1666666716337204, 0, 0, 0.053629811853170395, 0, 0.15780247747898102, 0, 64.62770080566406, -46, -2.2524521350860596, 1); -webkit-filter: brightness(0.9825666695833206);"><rect id="exp-svg-28" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#34C7D9" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.33322885632514954, 0, 0.008345765992999077, 0, 0, -0.3333333432674408, 0, 0, -0.008345765992999077, 0, -0.33322885632514954, 0, -8.995611190795898, 8, 0.35052216053009033, 1); -webkit-filter: brightness(0.9999400228261948);"><rect id="exp-svg-29" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#29C659" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.008345765992999077, 0, 0.33322885632514954, 0, 0, -0.3333333432674408, 0, 0, -0.33322885632514954, 0, 0.008345765992999077, 0, 5.350522041320801, 8, 13.995611190795898, 1); -webkit-filter: brightness(0.6564791378565132);"><rect id="exp-svg-30" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#34C7D9" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.33322885632514954, 0, -0.008345765992999077, 0, 0, -0.3333333432674408, 0, 0, 0.008345765992999077, 0, 0.33322885632514954, 0, 18.9956111907959, 8, -0.35052216053009033, 1); -webkit-filter: brightness(0.9999400228261948);"><rect id="exp-svg-31" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#29C659" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="84" height="180" viewBox="-34.98 -0.22 100.98 211" style="display: block; overflow: hidden; width: 84px; height: 180px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.008345765992999077, 0, -0.33322885632514954, 0, 0, -0.3333333432674408, 0, 0, 0.33322885632514954, 0, -0.008345765992999077, 0, 4.649477958679199, 8, -13.995611190795898, 1); -webkit-filter: brightness(0.6564791378565132);"><rect id="exp-svg-32" x="-35" y="189.78" fill="#546E7A" width="11" height="19.999"></rect><path fill="#34C7D9" d="M-34.98-0.22v180.686h14.96c0-40.033,55.04-60.049,55.04-110.686C35.02,31.12,3.68-0.22-34.98-0.22z"></path></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 144 144" style="display: block; overflow: hidden; width: 300px; height: 300px; position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.13333334028720856, 0, 0, 0, 0, -0.13333334028720856, 0, 0, 0, 0, 0.13333334028720856, 0, 170, -18, 0, 1);"><g>	<g opacity="0.05">		<path fill="#010101" d="M115.282,68.518c-3.602-18.457-19.63-32.377-38.869-32.377c-15.279,0-28.516,8.793-35.132,21.654			c-15.895,1.734-28.279,15.389-28.279,31.99c0,17.774,14.198,32.186,31.707,32.186h68.697c14.593,0,26.421-12.005,26.421-26.821			C139.824,80.986,128.978,69.512,115.282,68.518z"></path>		<path opacity="0.05" fill="#010101" enable-background="new    " d="M41.28,57.795C25.385,59.529,13,73.184,13,89.785			c0,17.774,14.198,32.186,31.707,32.186h31.706v-85.83C61.134,36.141,47.896,44.934,41.28,57.795z"></path>	</g>	<g>		<g>			<path fill="#E9F7FE" d="M107.615,60.852c-3.603-18.457-19.63-32.377-38.87-32.377c-15.278,0-28.514,8.793-35.131,21.654				c-15.896,1.733-28.28,15.388-28.28,31.989c0,17.775,14.198,32.186,31.707,32.186h68.696c14.594,0,26.421-12.006,26.421-26.821				C132.157,73.32,121.311,61.844,107.615,60.852z"></path>			<g>				<path opacity="0.05" fill="#46A8DF" enable-background="new    " d="M33.613,50.128C17.718,51.862,5.333,65.517,5.333,82.118					c0,17.775,14.198,32.186,31.707,32.186h31.705V28.475C53.467,28.475,40.229,37.267,33.613,50.128z"></path>			</g>		</g>	</g></g></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 144 144" style="display: block; overflow: hidden; width: 300px; height: 300px; position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.0833333358168602, 0, 0, 0, 0, -0.0833333358168602, 0, 0, 0, 0, 0.0833333358168602, 0, 49, -44, -50, 1);"><g>	<g opacity="0.05">		<path fill="#010101" d="M115.282,68.518c-3.602-18.457-19.63-32.377-38.869-32.377c-15.279,0-28.516,8.793-35.132,21.654			c-15.895,1.734-28.279,15.389-28.279,31.99c0,17.774,14.198,32.186,31.707,32.186h68.697c14.593,0,26.421-12.005,26.421-26.821			C139.824,80.986,128.978,69.512,115.282,68.518z"></path>		<path opacity="0.05" fill="#010101" enable-background="new    " d="M41.28,57.795C25.385,59.529,13,73.184,13,89.785			c0,17.774,14.198,32.186,31.707,32.186h31.706v-85.83C61.134,36.141,47.896,44.934,41.28,57.795z"></path>	</g>	<g>		<g>			<path fill="#E9F7FE" d="M107.615,60.852c-3.603-18.457-19.63-32.377-38.87-32.377c-15.278,0-28.514,8.793-35.131,21.654				c-15.896,1.733-28.28,15.388-28.28,31.989c0,17.775,14.198,32.186,31.707,32.186h68.696c14.594,0,26.421-12.006,26.421-26.821				C132.157,73.32,121.311,61.844,107.615,60.852z"></path>			<g>				<path opacity="0.05" fill="#46A8DF" enable-background="new    " d="M33.613,50.128C17.718,51.862,5.333,65.517,5.333,82.118					c0,17.775,14.198,32.186,31.707,32.186h31.705V28.475C53.467,28.475,40.229,37.267,33.613,50.128z"></path>			</g>		</g>	</g></g></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 144 144" style="display: block; overflow: hidden; width: 300px; height: 300px; position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.06666667014360428, 0, 0, 0, 0, -0.06666667014360428, 0, 0, 0, 0, 0.06666667014360428, 0, 25, 11, 50, 1);"><g>	<g opacity="0.05">		<path fill="#010101" d="M115.282,68.518c-3.602-18.457-19.63-32.377-38.869-32.377c-15.279,0-28.516,8.793-35.132,21.654			c-15.895,1.734-28.279,15.389-28.279,31.99c0,17.774,14.198,32.186,31.707,32.186h68.697c14.593,0,26.421-12.005,26.421-26.821			C139.824,80.986,128.978,69.512,115.282,68.518z"></path>		<path opacity="0.05" fill="#010101" enable-background="new    " d="M41.28,57.795C25.385,59.529,13,73.184,13,89.785			c0,17.774,14.198,32.186,31.707,32.186h31.706v-85.83C61.134,36.141,47.896,44.934,41.28,57.795z"></path>	</g>	<g>		<g>			<path fill="#E9F7FE" d="M107.615,60.852c-3.603-18.457-19.63-32.377-38.87-32.377c-15.278,0-28.514,8.793-35.131,21.654				c-15.896,1.733-28.28,15.388-28.28,31.989c0,17.775,14.198,32.186,31.707,32.186h68.696c14.594,0,26.421-12.006,26.421-26.821				C132.157,73.32,121.311,61.844,107.615,60.852z"></path>			<g>				<path opacity="0.05" fill="#46A8DF" enable-background="new    " d="M33.613,50.128C17.718,51.862,5.333,65.517,5.333,82.118					c0,17.775,14.198,32.186,31.707,32.186h31.705V28.475C53.467,28.475,40.229,37.267,33.613,50.128z"></path>			</g>		</g>	</g></g></svg></div></div></div>
+        
+        <div class="bucket -secondary g-bg-water-blue hide-for-small-only js-desktop-map">
+          <div class="map js-map" style="overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; cursor: url(https://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default; -webkit-transform-origin: 0px 0px; -webkit-transform: matrix(1, 0, 0, 1, 0, 0);"><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; width: 100%; z-index: 200;"><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; width: 100%; z-index: 201;"><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 673px; top: 178px;"><canvas draggable="false" height="256" width="256" style="-webkit-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 417px; top: 178px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 673px; top: -78px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 673px; top: 434px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 929px; top: 178px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 417px; top: 434px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 417px; top: -78px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 929px; top: -78px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 929px; top: 434px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 1185px; top: 178px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 161px; top: 178px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 1185px; top: 434px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 1185px; top: -78px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 161px; top: 434px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 161px; top: -78px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 1441px; top: 178px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: -95px; top: 178px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: -95px; top: -78px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 1441px; top: -78px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: -95px; top: 434px;"></div><div style="width: 256px; height: 256px; overflow: hidden; -webkit-transform: translateZ(0px); position: absolute; left: 1441px; top: 434px;"></div></div></div></div></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; width: 100%; z-index: 202;"><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div></div><div style="-webkit-transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 673px; top: 178px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 417px; top: 178px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 673px; top: -78px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 673px; top: 434px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 929px; top: 178px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 417px; top: 434px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 417px; top: -78px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 929px; top: -78px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 929px; top: 434px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1185px; top: 178px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 161px; top: 178px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1185px; top: 434px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1185px; top: -78px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 161px; top: 434px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 161px; top: -78px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1441px; top: 178px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -95px; top: 178px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -95px; top: -78px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1441px; top: -78px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -95px; top: 434px;"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1441px; top: 434px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 673px; top: 178px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts1.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=5&amp;y=12&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 417px; top: 178px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=4&amp;y=12&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 673px; top: -78px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts1.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=5&amp;y=11&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 673px; top: 434px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts1.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=5&amp;y=13&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 929px; top: 178px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=6&amp;y=12&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 417px; top: 434px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=4&amp;y=13&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 417px; top: -78px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=4&amp;y=11&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 929px; top: -78px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=6&amp;y=11&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 929px; top: 434px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=6&amp;y=13&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1185px; top: 178px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts1.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=7&amp;y=12&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 161px; top: 178px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts1.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=3&amp;y=12&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1185px; top: 434px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts1.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=7&amp;y=13&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1185px; top: -78px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts1.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=7&amp;y=11&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 161px; top: 434px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts1.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=3&amp;y=13&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 161px; top: -78px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts1.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=3&amp;y=11&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1441px; top: 178px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=8&amp;y=12&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -95px; top: 178px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=2&amp;y=12&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -95px; top: -78px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=2&amp;y=11&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1441px; top: -78px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=8&amp;y=11&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: -95px; top: 434px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=2&amp;y=13&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div><div style="width: 256px; height: 256px; -webkit-transform: translateZ(0px); position: absolute; left: 1441px; top: 434px; opacity: 1; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="https://mts0.googleapis.com/vt?lyrs=m@267000000&amp;src=apiv3&amp;hl=en-US&amp;x=8&amp;y=13&amp;z=5&amp;apistyle=s.e%3Al%7Cp.v%3Aoff%2Cs.t%3A3%7Cs.e%3Ag%7Cp.v%3Aoff%2Cs.t%3A6%7Cp.v%3Aon%7Cp.c%3A%23ff5dc7ff&amp;style=47,37%7Csmartmaps" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; -webkit-transform: translateZ(0px);"></div></div></div></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 70px; bottom: 0px; width: 229px;"><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><span>©2014 Google - </span><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Map Data</a><span>Map data ©2014 Google, INEGI</span></div></div></div><div style="padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 554px; top: 183px; background-color: white;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2014 Google, INEGI</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt3.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2014 Google, INEGI</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; position: absolute; -webkit-user-select: none; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;"><a href="http://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; display: none;"><a target="_new" title="Report errors in the road map or imagery to Google" href="http://maps.google.com/maps?ll=37.784731,-122.401978&amp;z=5&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3&amp;skstate=action:mps_dialog$apiref:1&amp;output=classic" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report a map error</a></div></div><div class="gmnoprint" draggable="false" controlwidth="25" controlheight="202" style="margin: 5px; -webkit-user-select: none; position: absolute; top: 0px; right: 25px;"><div class="gmnoprint" controlwidth="25" controlheight="202" style="position: absolute; left: 0px; top: 0px;"><div title="Zoom in" style="width: 23px; height: 24px; overflow: hidden; position: relative; cursor: pointer; z-index: 1;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt3.png" draggable="false" style="position: absolute; left: -17px; top: -400px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div title="Click to zoom" style="width: 25px; height: 154px; overflow: hidden; position: relative; cursor: pointer; top: -4px;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt3.png" draggable="false" style="position: absolute; left: -17px; top: -87px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div title="Drag to zoom" style="width: 21px; height: 14px; overflow: hidden; position: absolute; -webkit-transition: top 0.25s ease; transition: top 0.25s ease; z-index: 2; cursor: url(https://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default; left: 2px; top: 140px;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt3.png" draggable="false" style="position: absolute; left: 0px; top: -384px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div title="Zoom out" style="width: 23px; height: 23px; overflow: hidden; position: relative; cursor: pointer; top: -4px; z-index: 3;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt3.png" draggable="false" style="position: absolute; left: -17px; top: -361px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></div></div></div></div>
+
+          <div class="v-align -whole">
+            <div class="v-align__element">
+              <h2 class="bucket__headline h2 g-color-white -map">
+                Find your way&nbsp;here
+              </h2>
+            </div>
+          </div>
+
+          <div class="location js-map-location">
+            <div class="map__card location__name">
+              <div class="location__input js-map-search">
+                <form class="js-location-form">
+                  <label for="location-input" class="u-is-hidden-visually">Your location</label>
+                  <input type="text" id="location-input" name="location-input" class="left js-location-input" data-input-value="Your location" placeholder="Your location" autocomplete="off">
+                  <input type="submit" class="u-is-hidden-visually js-location-submit">
+                </form>
+              <span class="map__cta right js-active icon -location-grey"></span></div>
+
+              <div class="location__result">
+                <span class="result__name js-location-name"></span>
+                <span>to I/O</span>
+                <span class="location__clear js-clear-location icon -close-grey"></span>
+              </div>
+            </div>
+
+            <div class="map__card location__data js-location-data">
+              <div class="data__stat -flux-capacitor -border-bottom">
+                <span class="data__label">
+                  <span class="icon -warp-black -middle"></span>
+                  Flux Capacitor
+                </span>
+
+                <span class="data__value js-flux-capacitor"></span>
+              </div>
+
+              <div class="data__stat -driving -border-bottom">
+                <span class="data__label">
+                  <span class="icon -car-black -text-bottom"></span>
+                  Driving
+                </span>
+
+                <span class="data__value js-driving"></span>
+              </div>
+
+              <div class="data__stat -walking">
+                <span class="data__label">
+                  <span class="icon -walking-black -text-bottom"></span>
+                  Distance
+                </span>
+
+                <span class="data__value js-distance"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bucket -secondary g-bg-water-blue show-for-small-only js-mobile-map">
+          <div class="map js-map"></div>
+
+          <div class="js-before">
+            <h2 class="bucket__headline h2 g-color-white -map">
+              Find your way&nbsp;here
+            </h2>
+
+            <a class="bucket__cta -top g-color-dark-blue with-icon js-cta" href="//maps.google.com/maps?espv=210&amp;es_sm=119&amp;um=1&amp;ie=UTF-8&amp;q=Moscone+Center&amp;fb=1&amp;gl=us&amp;hq=Moscone+Center&amp;cid=3424017263555639183&amp;sa=X&amp;ei=9tgpU5H9DtTjoATL9YK4Dg&amp;ved=0CNoBEPwS" target="_blank">
+              <span class="icon -location-darkblue -bottom"></span>
+              <span>Tap for directions to&nbsp;I/O</span>
+            </a>
+          </div>
+
+          <div class="map__results js-after">
+            <div class="js-after-delay">
+              <a class="map__cta -mobile" href="//maps.google.com/maps?espv=210&amp;es_sm=119&amp;um=1&amp;ie=UTF-8&amp;q=Moscone+Center&amp;fb=1&amp;gl=us&amp;hq=Moscone+Center&amp;cid=3424017263555639183&amp;sa=X&amp;ei=9tgpU5H9DtTjoATL9YK4Dg&amp;ved=0CNoBEPwS" target="_blank">
+                You are <span class="js-distance"></span> from I/O
+                <span class="icon -directions-darkblue right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="paging js-paging g-bg-blue show-for-small-only" data-mobile-only="true">
+          <div class="pane js-pane">
+            <div class="bucket -secondary g-bg-slate-grey">
+              <div class="bucket__photo -fade js-responsive-image-mobile" data-src="/events/io/images/photos/LogisticsGettingAround.jpg" data-hasretina="true" data-lazyload="true" data-breakpoints="320,568,768"></div>
+
+              <h2 class="bucket__headline g-color-white h2 -map">
+                And get around&nbsp;SF
+              </h2>
+
+              <span class="bucket__scrim with-icon g-color-yellow js-pane-forward" style="cursor: pointer; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                <span class="scrim show-for-small-only"></span>
+                <span class="icon -planes-yellow -bottom"></span>
+                <span>Travel tips</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="pane g-bg-white js-pane">
+            <div class="bucket -secondary g-color-off-black -auto -mobile-height-auto">
+              <div class="pane__back with-icon js-accordion-close js-pane-back" data-accordion-target="logistics" style="cursor: pointer; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                <span class="icon -back-blue -middle -on-right"></span>
+              </div>
+
+              <p>
+                Here are some travel tips to help you get to San Francisco and around town while you’re&nbsp;here.
+              </p>
+
+              <div class="accordion js-accordion" data-accordion-name="logistics">
+                <div class="accordion__item js-accordion-item">
+                  <div class="accordion__label -first js-accordion-label" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                    <span class="icon -planes-blue -baseline -buffer-right"></span>
+                    Major Airports
+                  </div>
+
+                  <div class="accordion__content">
+                    <p>
+                      Here are the three major airports in the Bay Area with international airline service. SFO is about 13 miles south of downtown; OAK is 5 miles south of downtown; and SJC is in the city of San Jose about 45 miles southwest of downtown San&nbsp;Francisco.
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="http://www.flysfo.com/to-from/ground-transportation" target="_blank">San Francisco International Airport&nbsp;(SFO)</a>
+                      <br>
+                      14 miles, 25-40 minute&nbsp;drive
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="http://www.oaklandairport.com/ground_transportation.shtml" target="_blank">Oakland International Airport&nbsp;(OAK)</a>
+                      <br>
+                      19 miles, 25-40 minute&nbsp;drive
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="http://www.flysanjose.com/fl/travelers.php?page=ground_trans/gt_overview&amp;exp=3" target="_blank">San Jose International Airport&nbsp;(SJC)</a>
+                      <br>
+                      47 miles, 60-75 minute&nbsp;drive
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion__item js-accordion-item">
+                  <div class="accordion__label js-accordion-label" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                    <span class="icon -car-blue -baseline -buffer-right"></span>
+                    From the Airport
+                  </div>
+
+                  <div class="accordion__content">
+                    <p>
+                      Super Shuttle International is offering a discount to all Google I/O attendees. Reservations must be booked in advance either&nbsp;<a class="g-color-blue" href="//www.supershuttle.com/default.aspx?GC=G66Z7" target="_blank">online</a>&nbsp;or by calling <span class="telephone">1-800-BLUE-VAN</span> <span class="telephone">(1-800-258-3826)</span>. The discount code for Google I/O is&nbsp;G66Z7.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion__item js-accordion-item">
+                  <div class="accordion__label js-accordion-label" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                    <span class="icon -trains-blue -baseline -buffer-right"></span>
+                    Public Transit
+                  </div>
+
+                  <div class="accordion__content">
+                    <p>
+                      Public transportation to the Moscone Center is&nbsp;<a class="g-color-blue" href="//www.moscone.com/directions/index.shtml" target="_blank">accessible</a>&nbsp;via BART, MUNI Metro, and&nbsp;Caltrain.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion__item js-accordion-item">
+                  <div class="accordion__label js-accordion-label" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                    <span class="icon -hotel-blue -baseline -buffer-right"></span>
+                    Hotels
+                  </div>
+
+                  <div class="accordion__content">
+                    <p>
+                      We have room blocks at the following&nbsp;hotels:
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="//www.intercontinental.com/redirect?path=hd&amp;brandCode=ic&amp;localeCode=en&amp;regionCode=925&amp;hotelCode=sfohb&amp;_PMID=99801505&amp;GPC=GO4" target="_blank">
+                        InterContinental
+                      </a>
+                      <br>
+                      Sold&nbsp;out
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="//parc55hotel.reztrip.com/special_offer?rate_code=GOIO&amp;offer_code=GOIO&amp;vr=3" target="_blank">
+                        Parc 55 Wyndham San&nbsp;Francisco
+                      </a>
+                      <br>
+                      Sold&nbsp;out
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="//www.jdvhotels.com/hotels/california/san-francisco-hotels/hotel-rex" target="_blank">
+                        The Hotel&nbsp;Rex
+                      </a>
+                      <br>
+                      Group Code:&nbsp;1406GOOGLE
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="//www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Google%20Developers%20Conference%5Esfoak%60giogioa%7Cgiogiob%60259%60USD%60false%606/24/14%606/26/14%606/4/14&amp;app=resvlink&amp;stop_mobi=yes" target="_blank">
+                        Hotel Adagio
+                      </a>
+                      <br>
+                      Sold&nbsp;out
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="//www.holidayinn.com/redirect?path=hd&amp;brandCode=hi&amp;localeCode=en&amp;regionCode=%20%201&amp;hotelCode=SFOCC&amp;_PMID=99801505&amp;GPC=GLE" target="_blank">
+                        Holiday Inn Civic&nbsp;Center
+                      </a>
+                      <br>
+                      Group Code: GLE or Google I/O&nbsp;2014
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="//www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=GOOGLE%20I/O%20DEVELOPER%20CONF%202014%5ESFODT%60GIOGIOA%7CGIOGIOB%7CGIOGIOC%60299.00-339.00%60USD%60false%606/23/14%606/26/14%606/2/14&amp;app=resvlink&amp;stop_mobi=yes" target="_blank">
+                        Marriott Marquis San&nbsp;Francisco
+                      </a>
+                      <br>
+                      Group Code: GIOGIOA (Single/Dbl), GIOGIOB (Triple), GIOGIOC&nbsp;(Quad)
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="//www.starwoodmeeting.com/StarGroupsWeb/res?id=1404047776&amp;key=14641787" target="_blank">
+                        Westin Market&nbsp;Street
+                      </a>
+                      <br>
+                      Sold&nbsp;out
+                    </p>
+
+                    <p>
+                      <a class="g-color-blue" href="//gc.synxis.com/rez.aspx?Hotel=26753&amp;Chain=10179&amp;arrive=06/23/2014&amp;depart=6/27/2014&amp;adult=1&amp;child=0&amp;group=12340802075" target="_blank">
+                        Palomar San&nbsp;Francisco
+                      </a>
+                      <br>
+                      Group Code:&nbsp;GOIO
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bucket g-bg-white -secondary-padding-top -last-padding hide-for-small-only">
+          <div class="bucket__background g-bg-slate-grey">
+            <div class="bucket__photo -fade js-responsive-image" data-src="/events/io/images/photos/LogisticsGettingAround.jpg" data-hasretina="true" data-lazyload="true" data-breakpoints="768,1024,1200,1400,1600"></div>
+          </div>
+
+          <h2 class="bucket__headline h2 g-color-white -padding-sides">
+            And get around&nbsp;SF
+          </h2>
+
+          <div class="row js-match-max js-card-intro">
+            <div class="u-buffer-point -middle js-card-point"></div>
+
+            <div class="card -large-buffer col -width-1-3 -medium-only-width-whole js-match-item" style="height: 686px;">
+              <div class="card__content -tallest g-bg-white initially-hidden js-card" style="-webkit-transform: matrix(1, 0, 0, 1, 0, 50);">
+                <h3 class="bucket__headline h3 with-absolute-icon">
+                  <span class="left">Major Airports</span>
+                  <span class="icon -planes-black -absolute -right"></span>
+                </h3>
+
+                <p>
+                  Here are the three major airports in the Bay Area with international airline service. SFO is about 13 miles south of downtown; OAK is 5 miles south of downtown; and SJC is in the city of San Jose about 45 miles southwest of downtown San&nbsp;Francisco.
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="http://www.flysfo.com/to-from/ground-transportation" target="_blank">San Francisco International Airport&nbsp;(SFO)</a>
+                  <br>
+                  14 miles, 25-40 minute&nbsp;drive
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="http://www.oaklandairport.com/ground_transportation.shtml" target="_blank">Oakland International Airport&nbsp;(OAK)</a>
+                  <br>
+                  19 miles, 25-40 minute&nbsp;drive
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="http://www.flysanjose.com/fl/travelers.php?page=ground_trans/gt_overview&amp;exp=3" target="_blank">San Jose International Airport&nbsp;(SJC)</a>
+                  <br>
+                  47 miles, 60-75 minute&nbsp;drive
+                </p>
+
+                <h3 class="bucket__headline h3 with-absolute-icon">
+                  <span class="left">From the Airport</span>
+                  <span class="icon -car-black -absolute -right"></span>
+                </h3>
+
+                <p>
+                  Super Shuttle International is offering a discount to all Google I/O attendees. Reservations must be booked in advance either&nbsp;<a class="g-color-blue" href="//www.supershuttle.com/default.aspx?GC=G66Z7" target="_blank">online</a>&nbsp;or by
+                  calling <span class="telephone">1-800-BLUE-VAN</span> <span class="telephone">(1-800-258-3826)</span>. The discount code for Google I/O is&nbsp;G66Z7.
+                </p>
+              </div>
+            </div>
+
+            <div class="card -large-buffer col -width-1-3 -medium-only-width-whole js-match-item" style="height: 686px;">
+              <div class="card__content -tallest g-bg-white initially-hidden js-card" style="-webkit-transform: matrix(1, 0, 0, 1, 0, 50);">
+                <h3 class="bucket__headline h3 with-absolute-icon">
+                  <span class="left">Public Transit</span>
+                  <span class="icon -trains-black -absolute -right"></span>
+                </h3>
+
+                <p>
+                  The <a class="g-color-blue" href="//www.moscone.com/directions/index.shtml" target="_blank">Moscone Center</a> is located at the corner of Fourth &amp; Howard streets, at <span class="address">800 Howard St. San Francisco, CA 94103</span>
+                </p>
+
+                <p>
+                  Public transportation to the Moscone Center is&nbsp;accessible&nbsp;via:
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//www.bart.gov/" target="_blank">BART</a>
+                  <br>
+                  Subway linking San Francisco to Oakland and&nbsp;Berkeley
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//www.sfmta.com/" target="_blank">MUNI Metro</a>
+                  <br>
+                  Citywide buses, trollies and cable&nbsp;cars
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="http://www.caltrain.com/" target="_blank">Caltrain</a>
+                  <br>
+                  Regional rail&nbsp;system
+                </p>
+              </div>
+            </div>
+
+            <div class="card -large-buffer col -width-1-3 -medium-only-width-whole js-match-item" style="height: 686px;">
+              <div class="card__content -tallest g-bg-white initially-hidden js-card" style="-webkit-transform: matrix(1, 0, 0, 1, 0, 50);">
+                <h3 class="bucket__headline h3 with-absolute-icon">
+                  <span class="left">Hotels</span>
+                  <span class="icon -hotel-black -absolute -right"></span>
+                </h3>
+
+                <p>
+                  We have room blocks at the following&nbsp;hotels:
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//www.intercontinental.com/redirect?path=hd&amp;brandCode=ic&amp;localeCode=en&amp;regionCode=925&amp;hotelCode=sfohb&amp;_PMID=99801505&amp;GPC=GO4" target="_blank">
+                    InterContinental
+                  </a>
+                  <br>
+                  Sold&nbsp;out
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//parc55hotel.reztrip.com/special_offer?rate_code=GOIO&amp;offer_code=GOIO&amp;vr=3" target="_blank">
+                    Parc 55 Wyndham San&nbsp;Francisco
+                  </a>
+                  <br>
+                  Sold&nbsp;out
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//www.jdvhotels.com/hotels/california/san-francisco-hotels/hotel-rex" target="_blank">
+                    The Hotel&nbsp;Rex
+                  </a>
+                  <br>
+                  Group Code:&nbsp;1406GOOGLE
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Google%20Developers%20Conference%5Esfoak%60giogioa%7Cgiogiob%60259%60USD%60false%606/24/14%606/26/14%606/4/14&amp;app=resvlink&amp;stop_mobi=yes" target="_blank">
+                    Hotel Adagio
+                  </a>
+                  <br>
+                  Sold&nbsp;out
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//www.holidayinn.com/redirect?path=hd&amp;brandCode=hi&amp;localeCode=en&amp;regionCode=%20%201&amp;hotelCode=SFOCC&amp;_PMID=99801505&amp;GPC=GLE" target="_blank">
+                    Holiday Inn Civic&nbsp;Center
+                  </a>
+                  <br>
+                  Group Code: GLE or Google I/O&nbsp;2014
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=GOOGLE%20I/O%20DEVELOPER%20CONF%202014%5ESFODT%60GIOGIOA%7CGIOGIOB%7CGIOGIOC%60299.00-339.00%60USD%60false%606/23/14%606/26/14%606/2/14&amp;app=resvlink&amp;stop_mobi=yes" target="_blank">
+                    Marriott Marquis San&nbsp;Francisco
+                  </a>
+                  <br>
+                  Group Code: GIOGIOA (Single/Dbl), GIOGIOB (Triple), GIOGIOC&nbsp;(Quad)
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//www.starwoodmeeting.com/StarGroupsWeb/res?id=1404047776&amp;key=14641787" target="_blank">
+                    Westin Market&nbsp;Street
+                  </a>
+                  <br>
+                  Sold&nbsp;out
+                </p>
+
+                <p>
+                  <a class="g-color-blue" href="//gc.synxis.com/rez.aspx?Hotel=26753&amp;Chain=10179&amp;arrive=06/23/2014&amp;depart=6/27/2014&amp;adult=1&amp;child=0&amp;group=12340802075" target="_blank">
+                    Palomar San&nbsp;Francisco
+                  </a>
+                  <br>
+                  Group Code:&nbsp;GOIO
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row js-card-intro">
+            <div class="card -buffer col -width-whole initially-hidden js-card" style="-webkit-transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
+              <div class="card__content -gutterless-sides -taller g-bg-white">
+                <h3 class="h3 -card-padding-sides">Questions?</h3>
+
+                <div class="row">
+                  <div class="col -width-1-3">
+                    <div class="-card-padding-sides">
+                      <h4 class="h4">General</h4>
+
+                      <ol>
+                        <li><a class="g-color-blue" href="/events/io/help#!/dates-and-location">2014 Dates &amp;&nbsp;Location</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/stay-informed">Stay Informed</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/livestream-and-recordings">Live Stream &amp;&nbsp;Recordings</a></li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="col -width-1-3">
+                    <div class="-card-padding-sides">
+                      <h4 class="h4">Registration</h4>
+
+                      <ol>
+                        <li><a class="g-color-blue" href="/events/io/help#!/registration">Registration</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/google-wallet-tips">Google Wallet&nbsp;Tips</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/registration-terms-and-conditions">Terms &amp; Conditions</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/academic-tickets">Academic Tickets</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/press">Press</a></li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="col -width-1-3">
+                    <div class="-card-padding-sides">
+                      <h4 class="h4">Attendance Details</h4>
+
+                      <ol>
+                        <li><a class="g-color-blue" href="/events/io/help#!/badges">Badges</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/after-hours">After Hours</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/accessibility">Accessibility</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/conduct">Conduct</a></li>
+                        <li><a class="g-color-blue" href="/events/io/help#!/child-care">Child Care</a></li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="u-buffer-point -middle js-card-point"></div>
+          </div>
+        </div>
+
+        <footer class="section footer g-bg-light-grey -border-top">
+          <div class="row">
+            <div class="col -width-whole">
+              <div class="left">
+                <!-- <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 38px; height: 24px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1404746544052" name="I0_1404746544052" src="https://apis.google.com/u/0/_/+1/fastbutton?usegapi=1&amp;annotation=none&amp;origin=https%3A%2F%2Fwww.google.com&amp;url=https%3A%2F%2Fwww.google.com%2Fevents%2Fio%2Flogistics&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.s2bOdO4XoIM.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAItRSTMF348GR47HtwPAwHP55zn9SGiI4Q#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1404746544052&amp;parent=https%3A%2F%2Fwww.google.com&amp;pfname=&amp;rpctoken=24953060" data-gapiattached="true" title="+1"></iframe></div> -->
+              </div>
+
+              <div class="right">
+                <a class="icon -google" href="//google.com" target="_blank">Google</a>
+              </div>
+
+              <div class="footer__links -top-buffer">
+                <div class="footer__link">
+                  <a href="/events/io/help">Help</a>
+                </div>
+
+                <div class="footer__link">
+                  <a href="//www.google.com/policies/" target="_blank">Privacy &amp;&nbsp;Terms</a>
+                </div>
+
+                <div class="footer__link">
+                  <a href="//googledevelopers.blogspot.com/" target="_blank">Google Developers&nbsp;Blog</a>
+                </div>
+
+                <div class="footer__link">
+                  <a href="//developers.google.com/" target="_blank">Google Developers</a>
+                </div>
+
+                <div class="footer__link">
+                  <a href="//plus.google.com/+GoogleDevelopers/posts" target="_blank">+Google Developers</a>
+                </div>
+
+                <div class="footer__link">
+                  <a href="//developers.google.com/events/io" target="_blank">Google I/O&nbsp;2013</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=geometry,places">
+    </script>
+    <!--<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCl--_P-fBdoicrXRSmmvBAH04xOLWV1CA&libraries=geometry,places&amp;sensor=false"></script> -->
+    <!-- <script src="https://maps.gstatic.com/cat_js/intl/en_us/mapfiles/api-3/16/13/%7Bmain,geometry,places%7D.js" type="text/javascript"></script> -->
+    <script src="/js/libs.min.js"></script>
+    <script src="/js/site.min.js"></script>
+    <script>
+      io.init('logistics');
+    </script>
+<!--     <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+    <script>new gweb.analytics.AutoTrack({ profile: 'UA-48929034-1'});</script>
+    <script type="text/javascript">
+      window.___gcfg = { parsetags: 'explicit' };
+      (function() {
+        var po = document.createElement('script');
+        po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://plus.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+      })();
+    </script> -->
+  
+<script src="/js/partials.min.js"></script><div class="pac-container" style="display: none; width: 240px; position: absolute; left: 304px; top: 1088px;"></div>
+<!-- <iframe name="oauth2relay2132460280" id="oauth2relay2132460280" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=https%3A%2F%2Fwww.google.com#rpctoken=373777624&amp;forcesecure=1" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe> -->
+<div class="hud-renderer" style="overflow: hidden; -webkit-transform-style: preserve-3d; width: 103px; height: 103px; position: absolute; right: 0px; bottom: 0px; -webkit-perspective: 124.33199846221439px;"><div style="-webkit-transform-style: preserve-3d; width: 103px; height: 103px; -webkit-transform: translate3d(0px, 0px, 124.33199846221439px) matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, 0, -182, 1) translate3d(51.5px, 51.5px, 0px);"><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="40.5" height="80" viewBox="0 0 28 56" style="display: block; overflow: hidden; width: 40.5px; height: 80px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, -20, 0, 0, 1);"><circle cx="28" cy="28" r="28" fill="#c0c0c0"></circle></svg><svg class="entity" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="40.5" height="80" viewBox="028 0 28 56" style="display: block; overflow: hidden; width: 40.5px; height: 80px; position: absolute; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 20, 0, 0, 1);"><circle cx="28" cy="28" r="28" fill="#c0c0c0"></circle></svg></div></div></body></html>
