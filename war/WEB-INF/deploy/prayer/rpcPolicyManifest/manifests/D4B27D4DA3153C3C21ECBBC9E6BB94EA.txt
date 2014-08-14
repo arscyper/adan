@@ -1,0 +1,2 @@
+serviceClass: com.app.prayer.time.client.GreetingService
+path: DEB41C3A181E7B6F737B7DF6A856D3D6.gwt.rpc

@@ -18,7 +18,8 @@
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>Prayer.html</welcome-file>
+    <welcome-file>prayer.html</welcome-file>
+    <url-pattern>/prayer</url-pattern>
   </welcome-file-list>
 
 </web-app>

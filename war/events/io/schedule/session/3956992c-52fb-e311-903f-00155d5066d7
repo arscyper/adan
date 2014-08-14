@@ -1,0 +1,39 @@
+{
+  "pretty_date": "Jun 25 11:00 AM - 12:00 PM",
+  "speakers": [],
+  "hide_from_schedule": false,
+  "localized_start": "2014-06-25 11:00:00-07:00",
+  "room": {
+    "name": "Code Lab",
+    "slug": "code-lab"
+  },
+  "live_stream_id": null,
+  "video_id": "",
+  "category_ids": [
+    "0ae12eae-a487-e311-84db-00155d5066d7",
+    "c8e37a77-3688-e311-84db-00155d5066d7",
+    "2ade1c01-8ed0-e311-b297-00155d5066d7"
+  ],
+  "start": "2014-06-25 18:00:00",
+  "featured": false,
+  "finish": "2014-06-25 19:00:00",
+  "pretty_time": "11:00 AM - 12:00 PM",
+  "key": "3956992c-52fb-e311-903f-00155d5066d7",
+  "related_video_ids": [],
+  "localized_finish": "2014-06-25 12:00:00-07:00",
+  "title": "Android Studio startup station",
+  "related_videos": [],
+  "is_live_streamed": false,
+  "categories": [
+    {
+      "slug": "code-lab"
+    },
+    {
+      "slug": "android"
+    },
+    {
+      "slug": "develop"
+    }
+  ],
+  "description": "Learn from Android experts about how to setup your Android development environment using Android Studio and Gradle. Create your first project and run your Android app on an emulator or device. Capacity: 10 people."
+}

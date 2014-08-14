@@ -661,6 +661,27 @@ a.g-color-blue,.hoverable a.card__banner.with-hover:hover,a.nav__item.-mobile.ac
 	}
 }
 
+.-show-ar-name{
+	display:none !Important;
+}
+
+
+@media only screen and  (max-width:850px){
+	.-medium-only-sched-1-3 {
+		width: 100%;
+		min-width:300px;
+	}
+	.-show-ar-name{
+		display:block !Important;
+	}
+}
+
+@media only screen and (min-width: 850px) and (max-width:1166px){
+	.-medium-only-sched-1-3 {
+		width: 50%
+	}
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 	.-medium-only-width-1-3 {
 		width: 33.33333%
@@ -720,6 +741,9 @@ a.g-color-blue,.hoverable a.card__banner.with-hover:hover,a.nav__item.-mobile.ac
 	.-push-1-2,.-push-1-3,.-push-2-3,.-push-1-4,.-push-3-4,.-push-1-5,.-push-2-5,.-push-3-5,.-push-4-5,.-push-1-6,.-push-5-6
 		{
 		margin-left: 0
+	}
+	.-show-ar-name{
+		display:inline !Important;
 	}
 }
 
@@ -1858,6 +1882,16 @@ ul.with-bullets {
 	background-position: 0 -269px;
 	height: 60px;
 	width: 81px
+}
+
+.icon.-mosque{
+	background-image:url('../images/logo-sp.png');
+	width:100px;
+	height:78px;
+}
+
+.icon.-mosque.-clean{
+	background-position:0 -90px;
 }
 
 @media ( -webkit-min-device-pixel-ratio : 1.5) , ( min--moz-device-pixel-ratio :
@@ -4872,7 +4906,7 @@ p+.accordion {
 }
 
 .experiment-partial.fallback.-clouds {
-	background-image: url('../images/chapters/clouds.png?1403562809');
+	background-image: url('//googledrive.com/host/0B9lA1v7cwGK2MHZMMEE1Ti10aEU/clouds.png?1403562809');
 	background-position: 100% -25%;
 	-webkit-background-size: auto 217px;
 	-moz-background-size: auto 217px;
@@ -5672,7 +5706,7 @@ p+.accordion {
 }
 
 .filters__toggle {
-	background: transparent url('../images/schedule/filter.svg?1401310804')
+	background: transparent url('/images/filter.svg?1401310804')
 		no-repeat 50% 50%;
 	-webkit-background-size: 20px;
 	-moz-background-size: 20px;
@@ -6533,10 +6567,11 @@ keyframes spin {
 }
 
 .videos .experiment-partial.fallback.-clouds {
+	/*//googledrive.com/host/0B9lA1v7cwGK2MHZMMEE1Ti10aEU/video-header-fallback.png?1403562809*/
 	background-image:
-		url('../images/chapters/video-header-fallback.png?1403562809');
+		url('//googledrive.com/host/0B9lA1v7cwGK2MHZMMEE1Ti10aEU/video-header-fallback.png?1403562809');
 	background-position: 85% 0;
-	background-size: auto 217px
+	background-size: auto 217px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -7008,4 +7043,49 @@ a.-shifted {
 	-moz-background-size: contain;
 	-o-background-size: contain;
 	background-size: contain
+}
+/**Custom css**/
+p.-quran{
+	font-family: Amiri QuranWeb;
+    font-style: normal;
+    font-weight: 400;
+    font-size:25px;
+}
+span.-quran{
+	font-family: Amiri QuranWeb;
+    font-style: normal;
+    font-weight: 400;
+    font-size:25px;
+}
+
+span.-quran-small{
+	font-family: Amiri QuranWeb;
+    font-style: normal;
+    font-weight: 400;
+    font-size:20px;
+}
+
+span.-columns{
+	padding-left:10px;
+}
+
+.-location-schedule{
+	width:250px;
+}
+
+.timetile{
+	background-repeat: repeat-y;
+	padding-left: 0;
+	margin-left: 0;
+	border-right: 6px solid
+}
+
+.timetile.-shafii{
+	border-left-color: #3f51b5;
+	border-right-color: #3f51b5
+}
+
+.timetile.-hanafii{
+	border-left-color: #03a9f4;
+	border-right-color: #03a9f4
 }

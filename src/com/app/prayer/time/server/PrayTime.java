@@ -695,7 +695,7 @@ public class PrayTime {
         PrayTime prayers = new PrayTime();
 
         prayers.setTimeFormat(prayers.Time12);
-        prayers.setCalcMethod(prayers.Jafari);
+        prayers.setCalcMethod(prayers.ISNA);
         prayers.setAsrJuristic(prayers.Shafii);
         prayers.setAdjustHighLats(prayers.AngleBased);
         int[] offsets = {0, 0, 0, 0, 0, 0, 0}; // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}

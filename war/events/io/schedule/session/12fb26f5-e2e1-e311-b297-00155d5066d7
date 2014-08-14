@@ -1,0 +1,31 @@
+{
+  "pretty_date": "Jun 25 9:00 AM - 12:00 PM",
+  "speakers": [],
+  "hide_from_schedule": false,
+  "localized_start": "2014-06-25 09:00:00-07:00",
+  "room": {
+    "name": "Level 3",
+    "slug": "level-3"
+  },
+  "live_stream_id": "wtLJPvx7-ys",
+  "video_id": "wtLJPvx7-ys",
+  "category_ids": [
+    "08e12eae-a487-e311-84db-00155d5066d7"
+  ],
+  "start": "2014-06-25 16:00:00",
+  "featured": false,
+  "finish": "2014-06-25 19:00:00",
+  "pretty_time": "9:00 AM - 12:00 PM",
+  "key": "12fb26f5-e2e1-e311-b297-00155d5066d7",
+  "related_video_ids": [],
+  "localized_finish": "2014-06-25 12:00:00-07:00",
+  "title": "Keynote",
+  "related_videos": [],
+  "is_live_streamed": true,
+  "categories": [
+    {
+      "slug": "sessions"
+    }
+  ],
+  "description": ""
+}

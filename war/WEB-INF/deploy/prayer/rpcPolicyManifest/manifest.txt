@@ -1,2 +1,3 @@
 # Module prayer
 # RPC service class, partial path of RPC policy file
+com.app.prayer.time.client.GreetingService, DEB41C3A181E7B6F737B7DF6A856D3D6.gwt.rpc
