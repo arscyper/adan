@@ -6,3 +6,4 @@ gaeHrdEnabled=true
 gaeLaunchAppInBrowser=true
 googleCloudSqlEnabled=false
 localDevMySqlEnabled=true
+validationExclusions=src/com/app/servlet/HomeBody.java|src/util/FileUtil.java

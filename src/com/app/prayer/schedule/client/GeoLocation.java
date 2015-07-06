@@ -1,10 +1,7 @@
 package com.app.prayer.schedule.client;
 
-import java.util.HashMap;
-
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsonUtils;
-import com.google.gwt.core.shared.GWT;
 
 public class GeoLocation {
 	private JavaScriptObject a;

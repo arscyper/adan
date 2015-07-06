@@ -16,9 +16,64 @@
     <url-pattern>/prayer/greet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>homeServlet</servlet-name>
+  	<servlet-class>com.app.servlet.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>homeServlet</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>geoServlet</servlet-name>
+  	<servlet-class>com.app.servlet.GeocodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>geoServlet</servlet-name>
+  	<url-pattern>/geo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>scheduleServlet</servlet-name>
+  	<servlet-class>com.app.servlet.ScheduleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>scheduleServlet</servlet-name>
+  	<url-pattern>/schedule/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>helpServlet</servlet-name>
+  	<servlet-class>com.app.servlet.HelpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>helpServlet</servlet-name>
+  	<url-pattern>/help</url-pattern>
+  </servlet-mapping>
+  
+  <!-- -->
+  <servlet>
+  	<servlet-name>printServlet</servlet-name>
+  	<servlet-class>com.app.servlet.PrintServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>printServlet</servlet-name>
+  	<url-pattern>/print</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>test1</servlet-name>
+  	<servlet-class>com.app.servlet.SiteMapGenerator</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+  	<servlet-name>test1</servlet-name>
+  	<url-pattern>/sitemap.xml</url-pattern>
+  </servlet-mapping>
+  
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>prayer.html</welcome-file>
     <url-pattern>/prayer</url-pattern>
   </welcome-file-list>
 

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/js/ipl.js" type="text/javascript"></script>
+<script type="text/javascript">
+	IPL.init("72.231.144.61");
+    IPL.request_location();
+    function callback(data){
+    	window.location = 'schedule?city=' + data.city + '&state='+ data.regionName +'&country=' + data.country +'&location=' + data.lat + ',' + data.lon;
+    	//alert();
+    }
+</script>
+  </head>
+  <body>
+ </body>
+</html>

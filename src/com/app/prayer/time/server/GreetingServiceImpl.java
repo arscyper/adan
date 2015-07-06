@@ -1,5 +1,8 @@
 package com.app.prayer.time.server;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
 import com.app.prayer.time.client.GreetingService;
 import com.app.prayer.time.shared.FieldVerifier;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -22,6 +25,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 
 		String serverInfo = getServletContext().getServerInfo();
 		String userAgent = getThreadLocalRequest().getHeader("User-Agent");
+		System.out.println(userAgent);
 
 		// Escape data from the client to avoid cross-site script vulnerabilities.
 		input = escapeHtml(input);
@@ -44,5 +48,25 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		}
 		return html.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
 				.replaceAll(">", "&gt;");
+	}
+
+	public String geocodeTimeZone(double lat, double lon)
+			throws IllegalArgumentException {
+		Calendar cal = Calendar.getInstance();
+	    String zone = com.app.timezone.TimeZoneMapper.getZoneName(lat, lon);
+		
+	    if(!"unknown".equals(zone)){
+		    cal.setTimeZone(TimeZone.getTimeZone(zone));
+	    }else{
+	    	return "-1000";
+	    }
+	    int y = cal.get(Calendar.YEAR);
+	    int m = cal.get(Calendar.MONTH) +1;
+	    int d = cal.get(Calendar.DAY_OF_MONTH);
+	    
+	    //cal.setTime(date);
+	    cal.add(Calendar.DAY_OF_MONTH, 0);
+        int zone_id = (cal.get(Calendar.ZONE_OFFSET) + cal.get(Calendar.DST_OFFSET)) / (60 * 60 * 1000);
+		return m + "," + d +"," + y + ","+ zone_id;
 	}
 }

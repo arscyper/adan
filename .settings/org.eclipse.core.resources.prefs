@@ -1,3 +1,11 @@
 eclipse.preferences.version=1
+encoding//src/com/app/cons/PrayTime.java=UTF-8
 encoding//src/com/app/prayer/schedule/client/PrayTime.java=UTF-8
+encoding//src/com/app/servlet/HelpBody.java=UTF-8
+encoding//src/com/app/servlet/HomeBody.java=UTF-8
+encoding//src/com/app/servlet/ScheduleBody.java=UTF-8
+encoding//src/com/app/servlet/text.txt=UTF-8
+encoding//war/js/site.js=UTF-8
 encoding//war/js/site1.min.js=UTF-8
+encoding/<project>=UTF-8
+encoding/test.html=UTF-8

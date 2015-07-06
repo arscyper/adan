@@ -1,5 +1,6 @@
 package com.app.prayer.schedule.client;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -52,7 +53,7 @@ public class PrayTime {
     private int OneSeventh; // 1/7th of night
     public int AngleBased; // angle/60th of night
     // Time Formats
-    private int Time24; // 24-hour format
+    public int Time24; // 24-hour format
     public int Time12; // 12-hour format
     private int Time12NS; // 12-hour format with no suffix
     private int Floating; // floating point number
@@ -716,21 +717,40 @@ public class PrayTime {
 	    return temp;
 	}
 
-	public String print(double latitude, double longitude,  int day){
+	public String print(double latitude, double longitude, String customLocation,  int day){
 		String temp = "";
 	    /**
 	     * final Date dueDate = new Date();
 		 * CalendarUtil.addDaysToDate(dueDate, 21);
 	     */
-	    
+	    String meta_date = getMetaDate(day) + "T";
 	    int time[] = getTimeInfo(day);
+	
 	    ArrayList<String> a = getPrayerTimes(time[0], time[1], time[2],
-	            latitude, longitude, time[3]);
+	            latitude, longitude, (getTimeZone() == -1000 || getTimeZone() == 0) ? time[3] : getTimeZone());
 	    ArrayList<String> b = getTimeNames();
 		temp = "<table>";
 		for(int i = 0 ; i <= a.size() -1; i++){
 			if(i != 4){
-				temp += "<tr><td><span class=\"-quran-small\">"+b.get(i)+"</span></td><td class=\"g-light-grey\">"+a.get(i)+"</td><td class=\"-show-ar-name\"><span class=\"-quran-small\">"+timeNamesAr.get(i)+"</span></td></tr>";
+				String endDate = "";
+				if(i < a.size() -1 && i != 1){
+					endDate = "<meta itemprop=\"endDate\" content=\""+ meta_date+ a.get(i + 1).trim() +"\" \">";
+				}
+				temp += "<tr itemscope itemtype=\"http://schema.org/Event\">" +
+						"<td>" +
+							"<span itemprop=\"name\" class=\"-quran-small\">"+b.get(i)+"</span>" +
+						"</td>" +
+						"<td class=\"g-light-grey\">"+
+						"<meta itemprop=\"description\" content=\"Prayer time for "+ customLocation +"\">"+
+					 	"<meta itemprop=\"startDate\" content=\""+ meta_date+ a.get(i).trim() +"\">" +
+						a.get(i)+
+						endDate +
+						"</td>" +
+						
+						"<td class=\"-show-ar-name\">" +
+							"<span class=\"-quran-small\">"+timeNamesAr.get(i)+"</span>" +
+						"</td>" +
+						"</tr>";
 			}
 		}
 		temp+="</table>";
@@ -751,6 +771,13 @@ public class PrayTime {
 			e.printStackTrace();
 		}
 		return s;
+	}
+	
+	public static String getMetaDate(int i){
+		Date now = new Date();
+		CalendarUtil.addDaysToDate(now, i);
+		DateTimeFormat fmt = DateTimeFormat.getFormat("yyyy-MM-dd");
+		return fmt.format(now);
 	}
 	
 	

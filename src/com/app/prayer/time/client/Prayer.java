@@ -3,28 +3,14 @@ package com.app.prayer.time.client;
 import java.util.ArrayList;
 import java.util.Date;
 
-import com.app.prayer.time.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArrayString;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.dom.client.KeyCodes;
-import com.google.gwt.event.dom.client.KeyUpEvent;
-import com.google.gwt.event.dom.client.KeyUpHandler;
-import com.google.gwt.i18n.client.NumberFormat;
+import com.google.gwt.dom.client.Element;
 import com.google.gwt.i18n.shared.DateTimeFormat;
-import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.DialogBox;
-import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.TextBox;
-import com.google.gwt.user.client.ui.VerticalPanel;
-
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
@@ -40,135 +26,54 @@ public class Prayer implements EntryPoint {
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
 	 */
-	private final GreetingServiceAsync greetingService = GWT
+	private static final GreetingServiceAsync greetingService = GWT
 			.create(GreetingService.class);
-
+	
+	private static int zone_id = -1000;
+	private static int month;
+	private static int year;
+	private static int day;
 	/**
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
+		
 		publish();
-		String value = Window.Location.getParameter("q");
-		GWT.log(value + "--add");
-		//GWTCode.exportMethod();
-
-/*		final Button sendButton = new Button("Send");
-		final TextBox nameField = new TextBox();
-		nameField.setText("GWT User");
-		final Label errorLabel = new Label();
-
-		// We can add style names to widgets
-		sendButton.addStyleName("sendButton");
-
-		// Add the nameField and sendButton to the RootPanel
-		// Use RootPanel.get() to get the entire body element
-		RootPanel.get("nameFieldContainer").add(nameField);
-		RootPanel.get("sendButtonContainer").add(sendButton);
-		RootPanel.get("errorLabelContainer").add(errorLabel);
-
-		// Focus the cursor on the name field when the app loads
-		nameField.setFocus(true);
-		nameField.selectAll();
-		//Prayer p = new Prayer();
-		// Create the popup dialog box
-		final DialogBox dialogBox = new DialogBox();
-		dialogBox.setText("Remote Procedure Call");
-		dialogBox.setAnimationEnabled(true);
-		final Button closeButton = new Button("Close");
-		// We can set the id of a widget by accessing its Element
-		closeButton.getElement().setId("closeButton");
-		final Label textToServerLabel = new Label();
-		final HTML serverResponseLabel = new HTML();
-		VerticalPanel dialogVPanel = new VerticalPanel();
-		dialogVPanel.addStyleName("dialogVPanel");
-		dialogVPanel.add(new HTML("<b>Sending name to the server:</b>"));
-		dialogVPanel.add(textToServerLabel);
-		dialogVPanel.add(new HTML("<br><b>Server replies:</b>"));
-		dialogVPanel.add(serverResponseLabel);
-		dialogVPanel.setHorizontalAlignment(VerticalPanel.ALIGN_RIGHT);
-		dialogVPanel.add(closeButton);
-		print(dialogVPanel, 0, 0);
-		dialogBox.setWidget(dialogVPanel);
-
-		// Add a handler to close the DialogBox
-		closeButton.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
-				dialogBox.hide();
-				sendButton.setEnabled(true);
-				sendButton.setFocus(true);
-			}
-		});
-
-		// Create a handler for the sendButton and nameField
-		class MyHandler implements ClickHandler, KeyUpHandler {
-			*//**
-			 * Fired when the user clicks on the sendButton.
-			 *//*
-			public void onClick(ClickEvent event) {
-				sendNameToServer();
-			}
-
-			*//**
-			 * Fired when the user types in the nameField.
-			 *//*
-			public void onKeyUp(KeyUpEvent event) {
-				if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-					sendNameToServer();
-				}
-			}
-
-			*//**
-			 * Send the name from the nameField to the server and wait for a response.
-			 *//*
-			private void sendNameToServer() {
-				// First, we validate the input.
-				errorLabel.setText("");
-				String textToServer = nameField.getText();
-				if (!FieldVerifier.isValidName(textToServer)) {
-					errorLabel.setText("Please enter at least four characters");
-					return;
-				}
-
-				// Then, we send the input to the server.
-				sendButton.setEnabled(false);
-				textToServerLabel.setText(textToServer);
-				serverResponseLabel.setText("");
-				greetingService.greetServer(textToServer,
-						new AsyncCallback<String>() {
-							public void onFailure(Throwable caught) {
-								// Show the RPC error message to the user
-								dialogBox
-										.setText("Remote Procedure Call - Failure");
-								serverResponseLabel
-										.addStyleName("serverResponseLabelError");
-								serverResponseLabel.setHTML(SERVER_ERROR);
-								dialogBox.center();
-								closeButton.setFocus(true);
-							}
-
-							public void onSuccess(String result) {
-								dialogBox.setText("Remote Procedure Call");
-								serverResponseLabel
-										.removeStyleName("serverResponseLabelError");
-								serverResponseLabel.setHTML(result);
-								dialogBox.center();
-								closeButton.setFocus(true);
-							}
-						});
-			}
-		}
-
-		// Add a handler to send the name to the server
-		MyHandler handler = new MyHandler();
-		sendButton.addClickHandler(handler);
-		nameField.addKeyUpHandler(handler);*/
 	}
 	
 	  // Set up the JS-callable signature as a global JS function.
 	  private static native void publish() /*-{
 	    $wnd.prayer_print = 
 	      @com.app.prayer.time.client.Prayer::print(Lcom/google/gwt/core/client/JavaScriptObject;);
+	    $wnd.prayer_print1 = 
+	      @com.app.prayer.time.client.Prayer::print(Ljava/lang/String;);  
 	  }-*/;
+	  
+	  public static JsArrayString printlatlng(){
+		  Element sub = DOM.getElementById("default-location");
+		  if(sub != null){
+			 String[] l = sub.getAttribute("content").split(",");
+			 if(l.length == 5){
+				 JsArrayString jsArrayString = createEmptyJsArrayString();
+				 jsArrayString.push(l[3]);
+				 jsArrayString.push(l[4]);
+				 return jsArrayString;
+			 }
+		  }
+		  return null;
+	  }
+	  
+	  public static JsArrayString print(String o){
+		  
+		  GeoLocation g = GeoLocation.parse1(o);
+		  JsArrayString jsArrayString = createEmptyJsArrayString();
+	  	  ArrayList<String> input = print(g.getLatitude(), g.getLongitude());
+	  	  for (String s : input) {
+	  		  jsArrayString.push(s);
+	  	  }
+	  	  jsArrayString.push(nextTime(input) +"");
+	  	  return jsArrayString;
+	  }
 	  
 	  public static JsArrayString print(JavaScriptObject o){
 		  GeoLocation g = new GeoLocation(o);
@@ -204,16 +109,37 @@ public class Prayer implements EntryPoint {
 	public static ArrayList<String> print(double latitude, double longitude){
 
 	    PrayTime prayers = new PrayTime();
-	
+	    
 	    prayers.setTimeFormat(prayers.Time12);
 	    prayers.setCalcMethod(prayers.ISNA);
 	    prayers.setAsrJuristic(prayers.Shafii);
 	    prayers.setAdjustHighLats(prayers.AngleBased);
 	    int[] offsets = {0, 0, 0, 0, 0, 0, 0}; // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
 	    prayers.tune(offsets);    
-	    int time[] = getTimeInfo();
-	    ArrayList<String> prayerTimes = prayers.getPrayerTimes(time[0], time[1], time[2],
-	            latitude, longitude, time[3]);
+	    greetingService.geocodeTimeZone(latitude, longitude, new AsyncCallback<String>() {
+							public void onFailure(Throwable caught) {
+								
+							}
+							public void onSuccess(String result) {
+								String[] a = result.split(",");
+								month = Integer.parseInt(a[0]);
+								day = Integer.parseInt(a[1]);
+								year= Integer.parseInt(a[2]);
+								zone_id = Integer.parseInt(a[3]);
+							}
+						});
+	    
+	    if(zone_id == -1000){
+	    	int time[] = getTimeInfo();
+	    	year = time[0];
+	    	month = time[1];
+	    	day = time[2];
+	    	zone_id = time[3];
+	    }
+	    
+	    
+	    ArrayList<String> prayerTimes = prayers.getPrayerTimes(year, month, day,
+	            latitude, longitude, zone_id);
 	    //ArrayList<String> prayerNames = prayers.getTimeNames();
 	    return prayerTimes;
 	}
