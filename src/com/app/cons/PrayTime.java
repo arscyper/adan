@@ -736,7 +736,7 @@ public class PrayTime {
         String meta_date = isoFormatPartial.format(cal.getTime());
         //y,m,d,z
 	    ArrayList<String> a = getPrayerTimes(y, m, d, dto.getLatitude(), dto.getLongitude(), zone_id);
-	    System.out.println(a);
+	    //System.out.println(a);
 	    ArrayList<String> b = getTimeNames();
 		temp += "<table>";
 		for(int i = 0 ; i <= a.size() -1; i++){
@@ -747,7 +747,7 @@ public class PrayTime {
 				}
 				temp += "<tr itemscope itemtype=\"http://schema.org/Event\">" +
 							"<td>" +
-						 		"<span itemprop=\"name\" class=\"-quran-small\">"+b.get(i)+" Prayer</span>" +
+						 		"<span itemprop=\"name\" class=\"-quran-small\">"+b.get(i)+"</span>" +
 						 	"</td>" +
 						 	"<td class=\"g-light-grey\">" +
 						 	"<meta itemprop=\"description\" content=\"Prayer time for "+ b.get(i) + " in " + dto.city + ","+ dto.state + " " + dto.short_country  +"\">"+

@@ -705,11 +705,11 @@ public class HomeBody {
 			"<h2 class=\"bucket__headline h2 g-color-dark-blue -map\">Find your"+
 			"\tprayer times&nbsp;here</h2>"+
 			""+
-			"<a class=\"bucket__cta -top g-color-dark-blue with-icon js-cta\""+
-			"\thref=\"//www.google.com/maps/place/Kaaba,+Al+Haram,+Mecca+24231,+Saudi+Arabia/@21.4216181,39.8247903,17z/data=!3m1!4b1!4m2!3m1!1s0x15c204b74c5bf99f:0x374ededffc94c249\""+
+/*			"<a class=\"bucket__cta -top g-color-dark-blue with-icon\""+
+			"\thref=\"\""+
 			"\ttarget=\"_blank\"> <span class=\"icon -location-darkblue -bottom\"></span>"+
-			"<span>Tap for next prayer&nbsp;time</span>"+
-			"</a>"+
+			"<span>Modify location</span>"+
+			"</a>"+*/
 			"</div>"+
 			""+
 			"<div class=\"map__results js-after\">"+

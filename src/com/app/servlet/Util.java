@@ -101,6 +101,8 @@ public class Util {
 		states.put("Yukon Territory","YT");
 	};
 	
+	public static int DEV_MODE = -1; // 0 local, 1 with ip, 2 PROD
+	public static String version = "1-2";
 	
 	public static HashMap<String, String> PROPERTIES = new HashMap<String, String>(){
 		/**
@@ -109,12 +111,25 @@ public class Util {
 		private static final long serialVersionUID = 1L;
 
 		{
-			put("SITE_JS", "//googledrive.com/host/0B9lA1v7cwGK2MHZMMEE1Ti10aEU/site1.min.js");
-			put("PRAYER_JS", "http://www.findazan.info/prayer/prayer.nocache.js");
-			put("SCHEDULE_JS", "http://www.findazan.info/schedule/schedule.nocache.js");
-			//put("SITE_JS", "http://127.0.0.1:8888/js/site.js");
-			//put("PRAYER_JS", "http://127.0.0.1:8888/prayer/prayer.nocache.js");
-			//put("SCHEDULE_JS", "http://127.0.0.1:8888/schedule/schedule.nocache.js");
+			if (DEV_MODE == -1) {
+				put("SITE_JS", "http://1-2-dot-islamicsalat.appspot.com/js/site1.min.js");
+				put("PRAYER_JS", "http://1-2-dot-islamicsalat.appspot.com/prayer/prayer.nocache.js");
+			    put("SCHEDULE_JS", "http://1-2-dot-islamicsalat.appspot.com/schedule/schedule.nocache.js");
+			    put("SITE_JS", "//googledrive.com/host/0B9lA1v7cwGK2MHZMMEE1Ti10aEU/site-"+ version +".min.js");
+			}else if(DEV_MODE == 0) {
+				put("SITE_JS", "http://localhost:8888/js/site1.min.js");
+				put("PRAYER_JS", "http://localhost:8888/prayer/prayer.nocache.js");
+				put("SCHEDULE_JS", "http://localhost:8888/schedule/schedule.nocache.js");
+			}else if( DEV_MODE == 1) {
+				put("SITE_JS", "http://10.124.51.81:8888/js/site1.min.js");
+				put("PRAYER_JS", "http://10.124.51.81:8888/prayer/prayer.nocache.js");
+				put("SCHEDULE_JS", "http://10.124.51.81:8888/schedule/schedule.nocache.js");
+			}else if( DEV_MODE == 2) {
+				put("SITE_JS", "//googledrive.com/host/0B9lA1v7cwGK2MHZMMEE1Ti10aEU/site1.min.js");
+				put("PRAYER_JS", "http://www.findazan.info/prayer/prayer.nocache.js");
+			    put("SCHEDULE_JS", "http://www.findazan.info/schedule/schedule.nocache.js");
+			}
+			
 		}
 	};
 		

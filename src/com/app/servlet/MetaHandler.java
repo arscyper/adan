@@ -2,6 +2,19 @@ package com.app.servlet;
 
 public class MetaHandler {
 	public String keywords = "";
+	public static String STATIC_KEYWORDS = "Islam, Namaz, Islaam, Islamic, Masjid, Masjids, Mosque, Masque, Mosq, Islamic"+
+"Center, Arab, Arabic, Arbi, US, USA, United States, Find, Search engine, Finder, Jumuah, Friday"+
+"prayer, organization, muslim, musalman, muslims, publish, Arabian, Middleast, Mideast, prayer time,"+
+"World, World Prayer, All world, Continents, businesses, business, salat, solat, time, times, GMT, daylight,"+ 
+"timezone, advertisement, search, longitude, latitude, qibla, kibla, direction, pakistan, saudi arabia, asia,kaaba,"+
+"europe, africa, geography, azaan, adhan, adhaan, namaz, fajr, shurooq, asr, maghrib, isha, Allah,"+
+"Muhammad, Quran, pray, country, city, small town, ramadan, ramazan, ramadhan, muslim prayer times, Muslim Prayer Times, Islamic Prayer times, Namaz Salat, 1436 Ramadan 2015, Namaz Times, Prayer Timetable, Ramadan Timings, Ramadan Timetable, Namaz/Namaaz Timings, Prayertimes, Mp3 Athan Azan,"+
+"islamic prayer times, Athan, Adan, Azan, Azaan, Adhan, Salat, Salah, Articles, إلإسلام, إسلام, مسلم, المسلمين, المسلمون, الإسلامية, مسجد, مساجد, مركز إسلامي, مؤسسة إسلامية, محلات تجارية, عرب, عربي, "+
+"عربية, أمريكا, كندا,السعودية, الولايات المتحدة الأمريكية, أوروبا, أفريقيا, آسيا, بحث, محرك بحث, أوقات الصلاة,الصلاة, الجمعة, القبلة, التاريخ, التقويم,"+
+"محول التاريخ, تحويل التاريخ, الكعبة, خارطة جغرافية, مدن, مدينة, دول, دولة, العالم,دول العالم, اتجاه, اتجاه القبلة, خط الطول, خط العرض, برنامج الأذان للجوال ,"+
+"الفجر, الظهر, العصر, المغرب,العشاء, أذان, الأذان, الإشراق, الشروق,رمضان, شهر رمضان, شهر, شهور, الحج, قرآن ,القرآن , محمد, الله, يوم, أيام,"+
+"ليلة القدر, عيد , عيد الفطر, عيد الأضحى ";
+	
 	public MetaHandler(){} 
 	
 	public String getMeta(String title, String desc, String imageUrl, String url){
@@ -15,7 +28,7 @@ public class MetaHandler {
 				"<meta http-equiv=\"cleartype\" content=\"on\">"+
 				"<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">"+
 				"<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">"+
-				"<meta name=\"keywords\" content=\"Islam,islam,namaz,adan,azan,athan,pray,prayer,time,kaaba,ramadan,namaz,salat,prayer,info"+keywords+"\">"+
+				"<meta name=\"keywords\" content=\""+ STATIC_KEYWORDS + keywords+"\">"+
 				"<meta property=\"og:type\" content=\"website\">"+
 				"<meta property=\"og:title\" content=\""+title+"\">"+
 				"<meta property=\"og:description\" content=\""+desc+"\">"+
