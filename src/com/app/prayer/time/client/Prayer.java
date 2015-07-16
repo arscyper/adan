@@ -43,8 +43,8 @@ public class Prayer implements EntryPoint {
 	
 	  // Set up the JS-callable signature as a global JS function.
 	  private static native void publish() /*-{
-	    $wnd.prayer_print = 
-	      @com.app.prayer.time.client.Prayer::print(Lcom/google/gwt/core/client/JavaScriptObject;);
+	   // $wnd.prayer_print = 
+	   //   @com.app.prayer.time.client.Prayer::print(Lcom/google/gwt/core/client/JavaScriptObject;);
 	    $wnd.prayer_print1 = 
 	      @com.app.prayer.time.client.Prayer::print(Ljava/lang/String;);  
 	  }-*/;
@@ -65,9 +65,10 @@ public class Prayer implements EntryPoint {
 	  
 	  public static JsArrayString print(String o){
 		  
-		  GeoLocation g = GeoLocation.parse1(o);
+		  GeoLocation g = GeoLocation.parse2(o);
 		  JsArrayString jsArrayString = createEmptyJsArrayString();
-	  	  ArrayList<String> input = print(g.getLatitude(), g.getLongitude());
+		  GWT.log(o);
+	  	  ArrayList<String> input = print(g.getLatitude(), g.getLongitude(), g.getM(), g.getD(), g.getY(), g.getZ());
 	  	  for (String s : input) {
 	  		  jsArrayString.push(s);
 	  	  }
@@ -75,7 +76,7 @@ public class Prayer implements EntryPoint {
 	  	  return jsArrayString;
 	  }
 	  
-	  public static JsArrayString print(JavaScriptObject o){
+/*	  public static JsArrayString print(JavaScriptObject o){
 		  GeoLocation g = new GeoLocation(o);
 		  JsArrayString jsArrayString = createEmptyJsArrayString();
 		  ArrayList<String> input = print(g.getLatitude(), g.getLongitude());
@@ -84,7 +85,7 @@ public class Prayer implements EntryPoint {
 			}
 			jsArrayString.push(nextTime(input) +"");
 			return jsArrayString; 
-	  }
+	  }*/
 	  //0,2,3,5,6
 	  public static int nextTime(ArrayList<String> input){
 		  int res = -1;
@@ -106,7 +107,7 @@ public class Prayer implements EntryPoint {
     	return [];
   	  }-*/;
 	  
-	public static ArrayList<String> print(double latitude, double longitude){
+	public static ArrayList<String> print(double latitude, double longitude, int month, int day, int year, int zone_id){
 
 	    PrayTime prayers = new PrayTime();
 	    
@@ -116,28 +117,6 @@ public class Prayer implements EntryPoint {
 	    prayers.setAdjustHighLats(prayers.AngleBased);
 	    int[] offsets = {0, 0, 0, 0, 0, 0, 0}; // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
 	    prayers.tune(offsets);    
-	    greetingService.geocodeTimeZone(latitude, longitude, new AsyncCallback<String>() {
-							public void onFailure(Throwable caught) {
-								
-							}
-							public void onSuccess(String result) {
-								String[] a = result.split(",");
-								month = Integer.parseInt(a[0]);
-								day = Integer.parseInt(a[1]);
-								year= Integer.parseInt(a[2]);
-								zone_id = Integer.parseInt(a[3]);
-							}
-						});
-	    
-	    if(zone_id == -1000){
-	    	int time[] = getTimeInfo();
-	    	year = time[0];
-	    	month = time[1];
-	    	day = time[2];
-	    	zone_id = time[3];
-	    }
-	    
-	    
 	    ArrayList<String> prayerTimes = prayers.getPrayerTimes(year, month, day,
 	            latitude, longitude, zone_id);
 	    //ArrayList<String> prayerNames = prayers.getTimeNames();
